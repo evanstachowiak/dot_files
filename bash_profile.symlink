@@ -70,7 +70,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES='auto'
 export GIT_PS1_SHOWUPSTREAM='auto'
 source $DOTFILESDIR/bash/git-prompt.sh
 
-export PS1="$Purple\u$Blue@\h $Green\w$Cyan\$(__git_ps1 ' (%s)') $Color_Off\! $ "
+export PS1="$Purple\u$Blue@\h $Green\w$Cyan\$(__git_ps1 ' (%s)') $Color_Off\!\n$Yellow>>> $Color_Off"
 
 # Include local settings
 if [ -r ~/.bash_local ]; then
