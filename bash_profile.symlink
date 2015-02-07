@@ -17,7 +17,7 @@ get_script_dir () {
   local SOURCE="${BASH_SOURCE[0]}"
   local DIR="$( dirname "$SOURCE" )"
 
-  while [ -h "$SOURCE" ]; do 
+  while [ -h "$SOURCE" ]; do
     SOURCE="$(readlink "$SOURCE")"
     [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
     DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd )"
