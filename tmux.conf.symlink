@@ -1,22 +1,22 @@
 # Solarized colors taken from the iTerm2 project
-# 
+#
 # Dark Background Tones
 # ---------------------
 # Base03 = #002B36
 # Base02 = #073642
-# 
+#
 # Content Tones
 # -------------
 # Base01 = #586E75
 # Base00 = #657B83
 # Base0 = #839496
 # Base1 = #93A1A1
-# 
+#
 # Light Background Tones
 # ----------------------
 # Base2 = #EEE8D5
 # Base3 = #FDF6E3
-# 
+#
 # Accent Colors
 # -------------
 # Yellow = #B58900
@@ -80,3 +80,25 @@ set-option -g default-command 'reattach-to-user-namespace-tmux -l "$SHELL"'
 bind y run-shell 'tmux save-buffer - | reattach-to-user-namespace-tmux pbcopy'
 
 set -g history-limit 100000
+
+# List of plugins
+# Supports `github_username/repo` or full git repo URLs
+set -g @tpm_plugins '              \
+  tmux-plugins/tpm                 \
+  tmux-plugins/tmux-sensible       \
+  tmux-plugins/tmux-resurrect      \
+'
+# Other examples:
+# github_username/plugin_name    \
+# git@github.com/user/plugin     \
+# git@bitbucket.com/user/plugin  \
+
+# Initializes TMUX plugin manager.
+# Keep this line at the very bottom of tmux.conf.
+run-shell '~/dot_files/tmux/plugins/tpm/tpm'
+
+# for vim
+set -g @resurrect-strategy-vim 'session'
+
+# for bash hsitory
+set -g @resurrect-save-bash-history 'on'
