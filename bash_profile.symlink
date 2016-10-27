@@ -7,7 +7,11 @@ export color_prompt=yes
 # Set default applications
 export EDITOR=vim
 export VISUAL=vim
-export PAGER=less
+if hash vimpager 2>/dev/null; then
+  export PAGER=vimpager
+else
+  export PAGER=less
+fi
 
 # Set shell hotkeys to vim
 set -o vi
@@ -41,8 +45,18 @@ done
 # Add the dot_files bin to PATH
 export PATH=$DOTFILESDIR/bin:$PATH
 
-# Reset
-Color_Off="\[\033[0m\]"       # Text Reset
+# Setup prompt
+Color_Prefix='\[\e['  # Required prefix for defining colors
+Color_Suffix='\]'     # Required suffix for defining colors
+Color_Off="${Color_Prefix}0m${Color_Suffix}"  # Text Reset
+Black="${Color_Prefix}0;30m${Color_Suffix}"   # Black
+Red="${Color_Prefix}0;31m${Color_Suffix}"     # Red
+Green="${Color_Prefix}0;32m${Color_Suffix}"   # Green
+Yellow="${Color_Prefix}0;33m${Color_Suffix}"  # Yellow
+Blue="${Color_Prefix}0;34m${Color_Suffix}"    # Blue
+Purple="${Color_Prefix}0;35m${Color_Suffix}"  # Purple
+Cyan="${Color_Prefix}0;36m${Color_Suffix}"    # Cyan
+White="${Color_Prefix}0;37m${Color_Suffix}"   # White
 
 # Regular Colors
 Black="\[\033[0;30m\]"        # Black
@@ -60,7 +74,7 @@ export GIT_PS1_SHOWUPSTREAM='auto'
 . /usr/local/etc/bash_completion.d/git-completion.bash
 source /usr/local/etc/bash_completion.d/git-prompt.sh
 
-export PS1="$Purple\u$Blue@\h $Green\w$Cyan\$(__git_ps1 ' (%s)') $Color_Off\!\n$Yellow>>> $Color_Off"
+export PS1="$Purple\u$Blue@\h $Green\w$Cyan\$(__git_ps1 ' (%s)') $Color_Off\! $ "
 
 # Git aliases
 alias gsha='git rev-parse --short HEAD'
