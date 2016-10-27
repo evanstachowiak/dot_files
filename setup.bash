@@ -28,3 +28,8 @@ for SYMLINK in $SYMLINKS; do
   BASENAME=$(basename $SYMLINK .symlink)
   ln -s $SYMLINK ~/.$BASENAME
 done
+
+which brew
+if ! which brew; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
