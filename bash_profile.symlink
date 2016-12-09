@@ -125,3 +125,8 @@ no_proxy() {
 # Ruby
 alias be='bundle exec'
 alias vim='rvm system do /usr/local/bin/vim $@'
+
+# Python
+export PYENV_ROOT=~/.pyenv
+export PATH=$PYENV_ROOT/shims:$PATH
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
