@@ -46,9 +46,9 @@ done
 export PATH=$DOTFILESDIR/bin:$PATH
 
 # Setup prompt
-Color_Prefix='\[\e['  # Required prefix for defining colors
+Color_Prefix='\[\033[0;3'  # Required prefix for defining colors
 Color_Suffix='\]'     # Required suffix for defining colors
-Color_Off="${Color_Prefix}0m${Color_Suffix}"  # Text Reset
+Color_Off="\[\033[0m\]" # Text Reset
 Black="${Color_Prefix}0;30m${Color_Suffix}"   # Black
 Red="${Color_Prefix}0;31m${Color_Suffix}"     # Red
 Green="${Color_Prefix}0;32m${Color_Suffix}"   # Green
@@ -58,23 +58,13 @@ Purple="${Color_Prefix}0;35m${Color_Suffix}"  # Purple
 Cyan="${Color_Prefix}0;36m${Color_Suffix}"    # Cyan
 White="${Color_Prefix}0;37m${Color_Suffix}"   # White
 
-# Regular Colors
-Black="\[\033[0;30m\]"        # Black
-Red="\[\033[0;31m\]"          # Red
-Green="\[\033[0;32m\]"        # Green
-Yellow="\[\033[0;33m\]"       # Yellow
-Blue="\[\033[0;34m\]"         # Blue
-Purple="\[\033[0;35m\]"       # Purple
-Cyan="\[\033[0;36m\]"         # Cyan
-White="\[\033[0;37m\]"        # White
-
 export GIT_PS1_SHOWDIRTYSTATE='auto'
 export GIT_PS1_SHOWUNTRACKEDFILES='auto'
 export GIT_PS1_SHOWUPSTREAM='auto'
 . /usr/local/etc/bash_completion.d/git-completion.bash
 source /usr/local/etc/bash_completion.d/git-prompt.sh
 
-export PS1="$Purple\u$Blue@\h $Green\w$Cyan\$(__git_ps1 ' (%s)') $Color_Off\! $ "
+export PS1="$Purple\u$Blue@\h $Green\w$Cyan\$(__git_ps1 ' (%s)') \! $Color_Off$ "
 
 # Git aliases
 alias gsha='git rev-parse --short HEAD'
