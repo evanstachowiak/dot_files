@@ -76,6 +76,8 @@ alias gc='git commit'
 alias ga='git add'
 alias gp='git push'
 alias gpr='git pull --rebase'
+alias gst='git stash'
+alias gstp='git stash pop'
 
 # Include local settings
 if [ -r ~/.bash_local ]; then
