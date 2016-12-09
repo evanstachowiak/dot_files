@@ -130,3 +130,6 @@ alias vim='rvm system do /usr/local/bin/vim $@'
 export PYENV_ROOT=~/.pyenv
 export PATH=$PYENV_ROOT/shims:$PATH
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Docker
+eval $(docker-machine env docker)
