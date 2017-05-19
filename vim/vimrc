@@ -1,11 +1,11 @@
 "******* BEGIN PLUGIN INCLUSION *******"
 " Vundle setup
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " Vundle bundle definitions - github repos
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-haml'
