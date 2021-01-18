@@ -81,11 +81,11 @@ set norelativenumber
 "autocmd InsertLeave * :set relativenumber
 
 function! NumberingMethodToggle()   " Adapted from numbers.vim
-	if (&number)
-		set relativenumber
-	else
-		set number
-	endif
+  if (&number)
+    set relativenumber
+  else
+    set number
+  endif
 endfunc
 
 nnoremap <silent> <Leader>n :call NumberingMethodToggle()<CR>
