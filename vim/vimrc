@@ -73,7 +73,8 @@ colorscheme solarized
 
 " Configure line numbering
 set number
-set norelativenumber
+set nonumber
+"set norelativenumber
 "set relativenumber
 ":au FocusLost * :set number
 ":au FocusGained * :set relativenumber
