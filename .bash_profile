@@ -43,7 +43,7 @@ get_script_dir DOTFILESDIR
 #done
 
 # Add the dot_files bin to PATH
-export PATH=$DOTFILESDIR/bin:$PATH
+#export PATH=$DOTFILESDIR/bin:$PATH
 
 # Setup prompt
 Color_Prefix='\e[0;'  # Required prefix for defining colors
@@ -104,59 +104,8 @@ if [ -r ~/.bash_local ]; then
   source ~/.bash_local
 fi
 
-# autocomplete
-#complete -C aws_completer aws
-
-## JIRA
-#complete -F get_jira_targets jira
-#function get_jira_targets()
-#{
-    #if [ -z $2 ] ; then
-        #COMPREPLY=(`jira help -c`)
-    #else
-        #COMPREPLY=(`jira help -c $2`)
-    #fi
-#}
-
-## SVN
-#alias sc="svn commit -m'"
-#alias ss='svn status'
-
-# git
-alias git_rm_deleted="git status | awk '/deleted/ {system(\"git rm \" \$3)}'"
-
-# Java
-export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-
-# Proxy
-#no_proxy() {
-  #unset http_proxy
-  #unset https_proxy
-  #unset ftp_proxy
-#}
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 
 # Ruby
 alias be='bundle exec'
-alias vim='rvm system do /usr/local/bin/vim $@'
-
-# Python
-export PYENV_ROOT=~/.pyenv
-export PATH=$PYENV_ROOT/shims:$PATH
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-alias pv='python --version'
-
-# Docker
-#eval $(docker-machine env docker-machine)
 
 alias fix_virtualbox='sudo chown root:admin /Applications && sudo chmod o-w /Applications'
-
-# Casper Spec Helper
-rspecdb() {
-  rake db:drop db:setup RAILS_ENV=test
-  rspec $@
-}
-
