@@ -1,0 +1,32 @@
+# Load oh-my-zsh library
+antigen use oh-my-zsh
+
+# Load bundles from the default repo (oh-my-zsh)
+antigen bundle autojump
+antigen bundle aws
+antigen bundle command-not-found
+antigen bundle dircycle
+antigen bundle docker
+antigen bundle fzf
+antigen bundle Aloxaf/fzf-tab
+antigen bundle git
+antigen bundle gitignore
+antigen bundle history
+antigen bundle jsontools
+antigen bundle magic-enter
+antigen bundle man
+antigen bundle npm
+antigen bundle macos
+antigen bundle sudo
+antigen bundle terraform 
+
+# Load bundles from external repos
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Select theme
+antigen theme agnoster
+
+# Tell Antigen that you're done
+antigen apply
