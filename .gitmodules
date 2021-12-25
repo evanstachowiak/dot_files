@@ -23,3 +23,7 @@
 	path = antigen
 	url = https://github.com/zsh-users/antigen.git
 	branch = master
+[submodule "oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
