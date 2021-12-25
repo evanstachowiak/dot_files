@@ -1,7 +1,7 @@
 "******* BEGIN PLUGIN INCLUSION *******"
 " Vundle setup
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=/Users/.vim/Vundle.vim/
 call vundle#rc()
 
 " Vundle bundle definitions - github repos
@@ -73,7 +73,7 @@ colorscheme solarized
 
 " Configure line numbering
 set number
-set nonumber
+"set nonumber
 "set norelativenumber
 "set relativenumber
 ":au FocusLost * :set number
