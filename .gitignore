@@ -4,3 +4,7 @@
 # Vundle's bundles
 /vim.symlink/bundle/*
 !/vim.symlink/bundle/Vundle.vim
+
+*.swp
+
+.DS_Store
